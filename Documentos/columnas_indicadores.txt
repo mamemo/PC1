@@ -1,0 +1,124 @@
+1. provincia no
+2. canton no
+3. poblacion total no 
+4. superficie no
+5. densidad (personasXkm2) no
+6. porc. poblacion urbana si
+7. poblacion urbana 
+8. poblacion no urbana 
+9. relacion hombres-mujeres si
+10. mujeres
+11. hombres
+12. relacion de dependencia demografica no
+
+	Edad si
+13. 15-19 M
+14. 20 a 24 M
+15. 25 a 29 M
+16. 30 a 34 M
+17. 35 a 39 M
+18. 40 a 44 M
+19. 45 a 49 M
+20. 50 a 54 M
+21. 55 a 59 M
+22. 60 a 64 M
+23. 65 a 69 M
+24. 70 a 74 M
+25. 75 a 79 M
+26. 80 a 84 M
+27. 85 y más M
+28. 15-19 H
+29. 20 a 24 H
+30. 25 a 29 H
+31. 30 a 34 H
+32. 35 a 39 H
+33. 40 a 44 H
+34. 45 a 49 H
+35. 50 a 54 H
+36. 55 a 59 H
+37. 60 a 64 H
+38. 65 a 69 H
+39. 70 a 74 H
+40. 75 a 79 H
+41. 80 a 84 H
+42. 85 y más H
+
+43. viviendas individuales ocupadas no (40)
+44. promedio de ocupantes no
+45. porc. de viviendas en buen estado si
+46. viviendas en buen estado
+47. viviendas en mal estado
+48. porc. de viviendas hacinadas si
+49. viviendas hacinadas
+50. viviendas no hacinadas
+51. porc. de alfabetismo no
+52. porc. de alfabetismo 10-24 no
+53. porc. de alfabetismo 25-inf no
+54. escolaridad promedio no
+55. escolaridad promedio 25-49 no
+56. escolaridad promedio 50-inf no
+57. porcentaje de asistencia a la educacion regular no
+58. p.a.e.r. -inf-5 no
+59. p.a.e.r. 5-17 no
+60. p.a.e.r. 18-24 no
+61. p.a.e.r. 25-inf no (58)
+
+	Escolaridad si
+62. ningun año
+63. primaria incompleta
+64. primaria completa
+65. secundaria incompleta
+66. secundaria completa
+67. superior
+
+68. porc. personas fuera de la fuerza de trabajo si
+
+69. pensionado
+70. rentista
+71. estudia
+72. oficios domesticos
+73. otros    (70)
+
+74. porc. personas dentro de la fuerza de trabajo si (tasa neta de participacion)
+75. porc. personas dentro de la fuerza de trabajo Hombres
+76. porc. personas dentro de la fuerza de trabajo Mujeres
+
+77. sector primario
+78. sector secundario
+79. sector terciario
+
+80. porc. poblacion ocupada no asegurada no
+81. porc. poblacion nacida en el extranjero si (78)
+82. poblacion nacida en el extranjero
+83. poblacion no nacida en el extranjero
+84. porc. poblacion con discapacidad si
+85. poblacion con discapacidad
+86. poblacion sin discapacidad
+87. porc. poblacion no asegurada si
+88. poblacion no asegurada
+89. poblacion asegurada
+
+90. directo (87)
+91. indirecto
+92. otras formas
+
+93. porc. hogares con jefatura femenina no
+94. porc. hogares con jefatura compartida no
+
+	TICs
+
+95. telefono celular (92)
+96. telefono residencial
+97. computadora
+98. internet
+99. electricidad
+100. servicio sanitario
+101. agua
+
+
+
+
+
+
+
+

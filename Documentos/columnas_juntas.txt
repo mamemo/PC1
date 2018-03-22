@@ -1,0 +1,7 @@
+1. provincia
+2. canton
+3. distrito
+4. barrio
+5. # de junta
+6. electores
+7. votos recibidos
