@@ -5,6 +5,11 @@ import random
 Indicadores_x_Canton = './Documentos/Indicadores_x_Canton.csv'
 Juntas = './Documentos/Juntas.csv'
 VotosxPartidoxJunta = './Documentos/VotosxPartidoxJunta.csv'
+semilla = 0
+
+def set_semilla(seed):
+    global semilla
+    semilla = seed
 
 # Genera valor aleatorio para seleccionar un rango especifico segun
 # celdas recibidas del csv.
@@ -17,7 +22,10 @@ def generar_aleatorio_x_celdas(col, rango_min, rango_max, lista_archivo):
     # Los rangos inician en 1. Cada uno representa la cantidad que abarca cada
     # atributo.
     rangos = []
-    random.seed()
+    if semilla == 0:
+        random.seed()
+    else:
+        random.seed(semilla)
     # Si es para juntas
     try:
         if col != 'n/a':
@@ -164,6 +172,11 @@ def generar_muestra_aux(aleatorio_juntas, n, data_indicadores, data_votos):
         'UNIDAD SOCIAL CRISTIANA',
         'VOTOS NULOS',
         'VOTOS BLANCOS']
+    #Pone semilla en el random.
+    if semilla == 0:
+        random.seed()
+    else:
+        random.seed(semilla)
     # Lee indices de provincias en csv
     indices_provincias = obtener_indices_juntas(0, data_indicadores)
     if indices_provincias == 'no encontrado':
@@ -246,7 +259,6 @@ def generar_muestra_aux(aleatorio_juntas, n, data_indicadores, data_votos):
     # Escolaridad o primaria incompleta.
     alfabeta = 'alfabeta'
     if escolar[0] == 0 or escolar[0] == 1:
-        random.seed()
         num_aleatorio = random.uniform(1, 100)
         if num_aleatorio > float(alfabetismo):
             alfabeta = 'no alfabeta'
@@ -279,7 +291,6 @@ def generar_muestra_aux(aleatorio_juntas, n, data_indicadores, data_votos):
     # Porc. personas dentro de la fuerza de trabajo Mujeres
     nueva_muestra += datos_canton[73:76]
     # Genera si se encuentra fuera de la fuerza de trabajo
-    random.seed()
     num_aleatorio = random.uniform(1, 100)
     if num_aleatorio > float(fuera_trabajo):
         nueva_muestra += ['dentro de fuerza']
@@ -333,7 +344,6 @@ def generar_muestra_aux(aleatorio_juntas, n, data_indicadores, data_votos):
     nueva_muestra += datos_canton[92:94]
     # Genera si el hogar tiene jefatura femenina, compartida, o
     # Masculina
-    random.seed()
     num_aleatorio = random.uniform(1, 100)
     if num_aleatorio <= float(datos_canton[92]):
         nueva_muestra += ['jefatura femenina']
