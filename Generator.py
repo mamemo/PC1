@@ -203,7 +203,6 @@ def generar_muestra_aux(aleatorio_juntas, n, data_indicadores, data_votos):
     nueva_muestra += datos_canton[42:45]
     # Genera si tiene vivienda en buen estado o no
     vivienda = generar_aleatorio_x_celdas("n/a", 45, 47, datos_canton)
-    print("vivienda aleatorio: ", vivienda[0], " num ",vivienda[1])
     if vivienda[0] == 0:
         nueva_muestra += ['vivienda en buen estado']
     else:
@@ -213,14 +212,12 @@ def generar_muestra_aux(aleatorio_juntas, n, data_indicadores, data_votos):
     # Genera si tiene vivienda hacinada o no
     hacinamiento = generar_aleatorio_x_celdas(
         "n/a", 48, 50, datos_canton)
-    print("hacinamiento aleatorio: ", hacinamiento[0], " num ",hacinamiento[1])
     if hacinamiento[0] == 0:
         nueva_muestra += ['vivienda hacinada']
     else:
         nueva_muestra += ['vivienda no hacinada']
     # Genera grado de escolaridad
     escolar = generar_aleatorio_x_celdas("n/a", 61, 67, datos_canton)
-    print("escolar aleatorio: ", escolaridad[escolar[0]], " num ",escolar[1])
     nueva_muestra += [escolaridad[escolar[0]]]
     # Agrega porc. de alfabetismo
     nueva_muestra += [datos_canton[50]]
@@ -246,10 +243,8 @@ def generar_muestra_aux(aleatorio_juntas, n, data_indicadores, data_votos):
     escolaridad_edad = []
     if edad[0] >= 0 or edad[0] <= 6:  # Pues es de 18(25)-49 annos
         escolaridad_edad = datos_canton[54]
-        print("escolaridad porc edad: ", escolaridad_edad, " porc ",datos_canton[54])
     else:  # De 49 en adelante
         escolaridad_edad = datos_canton[55]
-        print("escolaridad porc edad: ", escolaridad_edad, " porc ",datos_canton[54])
     nueva_muestra += [escolaridad_edad]
     # Agrega porcentaje de asistencia a la educacion regular
     nueva_muestra += [datos_canton[56]]
@@ -276,7 +271,6 @@ def generar_muestra_aux(aleatorio_juntas, n, data_indicadores, data_votos):
         nueva_muestra += ['dentro de fuerza']
         sector = generar_aleatorio_x_celdas("n/a", 76, 79, datos_canton)
         nueva_muestra += [sectores[sector[0]]]
-        print("dentro de fuerza por num ", num_aleatorio, " en", [sectores[sector[0]]] ,",por num ", sector[1])
     else:
         nueva_muestra += ['fuera de fuerza']
         razon = generar_aleatorio_x_celdas('n/a', 68, 73, datos_canton)
@@ -292,10 +286,8 @@ def generar_muestra_aux(aleatorio_juntas, n, data_indicadores, data_votos):
     extranjero = generar_aleatorio_x_celdas("n/a", 81, 83, datos_canton)
     if extranjero[0] == 0:
         nueva_muestra += ['nacido en extranjero']
-        print("extranjero: ", extranjero[0], " num ",extranjero[1])
     else:
         nueva_muestra += ['no nacido en extranjero']
-        print("no extranjero ", extranjero[0], " num ",extranjero[1])
     # Agrega porc. poblacion con discapacidad
     nueva_muestra += [datos_canton[83]]
     # Genera discapacidad o no
@@ -303,10 +295,8 @@ def generar_muestra_aux(aleatorio_juntas, n, data_indicadores, data_votos):
         "n/a", 84, 86, datos_canton)
     if discapacidad[0] == 0:
         nueva_muestra += ['discapacidad']
-        print("discapacidad: ", discapacidad[0], " num ",discapacidad[1])
     else:
         nueva_muestra += ['sin discapacidad']
-        print("sin discapacidad: ", discapacidad[0], " num ",discapacidad[1])
     # Agrega porc. poblacion no asegurada
     nueva_muestra += [datos_canton[86]]
     # Genera si esta asegurado o no
@@ -337,14 +327,12 @@ def generar_muestra_aux(aleatorio_juntas, n, data_indicadores, data_votos):
         nueva_muestra += ['jefatura compartida']
     else:
         nueva_muestra += ['jefatura masculina']
-    print("jefatura: ", nueva_muestra[-1], " num ", num_aleatorio)
     # Genera si posee telefono celular
     num_aleatorio = random.uniform(1, 100)
     if num_aleatorio > float(datos_canton[94]):
         nueva_muestra += ['no telefono celular']
     else:
         nueva_muestra += ['telefono celular']
-    print("telefono: ", nueva_muestra[-1], " num ", num_aleatorio)
     # Genera si posee telefono residencial
     num_aleatorio = random.uniform(1, 100)
     if num_aleatorio > float(datos_canton[95]):
@@ -363,7 +351,6 @@ def generar_muestra_aux(aleatorio_juntas, n, data_indicadores, data_votos):
         nueva_muestra += ['no internet']
     else:
         nueva_muestra += ['internet']
-    print("internet: ", nueva_muestra[-1], " num ", num_aleatorio)
     # Genera si posee electricidad
     num_aleatorio = random.uniform(1, 100)
     if num_aleatorio > float(datos_canton[98]):
@@ -392,7 +379,6 @@ def generar_muestra_aux(aleatorio_juntas, n, data_indicadores, data_votos):
     # Genera voto
     voto = generar_aleatorio_x_celdas("n/a", 1, 16, datos_votos)
     nueva_muestra += [partidos[voto[0]]]
-    print("VOTO: ", nueva_muestra[-1], " num ", voto[1])
     return nueva_muestra
 
 # Genera muestras por provincia indicada.
