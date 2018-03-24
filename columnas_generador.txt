@@ -1,0 +1,55 @@
+1. provincia
+2. canton
+3. distrito
+4. barrio
+5. # de junta
+6. electores
+7. votos recibidos
+8. poblacion total x
+9. superficie x
+10. densidad (personasXkm2) x
+11. porc. poblacion urbana 
+12. pob.urbana/pob.nourbana
+13. relacion hombres-mujeres si
+14. mujer/hombre
+15. relacion de dependencia demografica x
+16. edad
+17. viviendas individuales ocupadas no x
+18. promedio de ocupantes x
+19. porc. de viviendas en buen estado 
+20. viviendas en buen estado/viviendas en mal estado
+21. porc. de viviendas hacinadas 
+22. viviendas hacinadas/viviendas no hacinadas
+23. escolaridad
+24. porc. de alfabetismo x
+25. porc. de alfabetismo de su edad x
+26. alfabeta/no alfabeta (solo se considera si no tiene escolaridad o prim. incompleta)
+27. escolaridad promedio x
+28. escolaridad promedio de su edad x (se toman los de 25 a 49 annos como si iniciaran en 18)
+29. porcentaje de asistencia a la educacion regular x
+30. p.a.e.r. de su edad x (se toman los de 5-17 como el rango 15-19, los de 18-24 como el rango 20-24)
+31. porc. personas fuera de la fuerza de trabajo x
+32. porc. personas dentro de la fuerza de trabajo si (tasa neta de participacion) x
+33. porc. personas dentro de la fuerza de trabajo Hombres x
+34. porc. personas dentro de la fuerza de trabajo Mujeres x
+35. dentro/fuera de fuerza de trabajo x
+36. razon (si se encuentra fuera de fuerza), o sector (si se encuentra dentro de la fuerza)
+37. porc. poblacion ocupada no asegurada x
+38. porc. poblacion nacida en el extranjero x
+39. nacido o no en el extranjeto
+40. porc. poblacion con discapacidad x
+41. con o sin discapacidad
+42. porc. poblacion no asegurada x
+43. asegurado o no 
+44. forma de aseguramiento (si no esta asegurado n/a)
+45. porc. hogares con jefatura femenina x
+46. porc. hogares con jefatura compartida x
+47. tipo de jefatura
+48. si tiene telefono celular en hogar o no
+49. si tiene telefono residencial en hogar o no
+50. si tiene computadora en hogar o no
+51. si tiene internet en hogar o no
+52. si tiene electricidad en hogar o no
+53. si tiene servicio sanitario en hogar o no
+54. si tiene agua en hogar o no
+55. voto
