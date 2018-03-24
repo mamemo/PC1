@@ -7,16 +7,92 @@ Juntas = './Documentos/Juntas.csv'
 VotosxPartidoxJunta = './Documentos/VotosxPartidoxJunta.csv'
 semilla = 0
 
+
+# Setea la semilla para las generaciones aleatorias.
+# Entradas: semilla.
+# Salidas: n/a.
+
 def set_semilla(seed):
     global semilla
     semilla = seed
+
+
+# Genera muestras por pais.
+# Entradas: num de muestras.
+# Salidas: muestras creadas.
+
+def generar_muestra_pais(n):
+    muestra = []
+    indice = 0
+    data_indicadores = []
+    data_juntas = []
+    data_votos = []
+    if not isinstance(n, int):
+        print('El valor ingresado para generar una muestra debe ser un entero.')
+        return
+    with open(Indicadores_x_Canton, 'r') as csv_indicadores, open(Juntas, 'r') as csv_juntas, open(VotosxPartidoxJunta, 'r') as csv_votos:
+        data_indicadores = list(csv.reader(csv_indicadores))
+        data_juntas = list(csv.reader(csv_juntas))
+        data_votos = list(csv.reader(csv_votos))
+    while indice < n:
+        # Generar junta
+        aleatorio_juntas = generar_aleatorio_x_celdas(
+            6, 0, 6542, data_juntas)
+        if aleatorio_juntas == 'no encontrado':
+            print('No se han encontrado los datos del CSV Juntas.')
+            return
+        muestra += [generar_muestra_aux(aleatorio_juntas,
+                                        n, data_indicadores, data_votos)]
+        indice += 1
+    return muestra
+
+
+# Genera muestras por provincia indicada.
+# Entradas: num de muestras, provincia a la que pertenecera la muestra.
+# Salidas: muestras creadas.
+
+def generar_muestra_provincia(n, nombre_provincia):
+    indice = 0
+    muestra = []
+    data_juntas = []
+    data_indicadores = []
+    data_votos = []
+    with open(Indicadores_x_Canton, 'r') as csv_indicadores, open(VotosxPartidoxJunta, 'r') as csv_votos, open(Juntas, 'r') as csv_juntas:
+        data_indicadores = list(csv.reader(csv_indicadores))
+        data_votos = list(csv.reader(csv_votos))
+        data_juntas = list(csv.reader(csv_juntas))
+    # Lee indices de provincias en csv
+    indices_provincias = obtener_indices_juntas(0, data_juntas)
+    if indices_provincias == 'no encontrado':
+        print('No se han obtenido los datos del CSV Juntas.')
+        return
+    # Valida parametros
+    if not isinstance(
+            n,
+            int) or nombre_provincia not in indices_provincias:
+        print(
+            'El valor ingresado para generar una muestra debe ser un entero.',
+            'La provincia indicada debe ingresarse en UPPERCASE, entre comillas y con los espacios apropiados. Ej: "SAN JOSE".')
+        return
+    # Genera junta dependiendo de su provincia
+    index_provincia = indices_provincias[nombre_provincia]
+    while indice < n:
+        aleatorio_juntas = generar_aleatorio_x_celdas(
+            6, index_provincia[0], index_provincia[1], data_juntas)
+        if aleatorio_juntas == 'no encontrado':
+            print('No se han encontrado los datos del CSV Juntas.')
+            return
+        muestra += [generar_muestra_aux(aleatorio_juntas,
+                                        n, data_indicadores, data_votos)]
+        indice += 1
+    return muestra
+
 
 # Genera valor aleatorio para seleccionar un rango especifico segun
 # celdas recibidas del csv.
 # Entradas: columna a analizar, num de fila de inicio, num fila final,
 # lista de filas del csv.
 # Salidas: fila elegida por aleatorio, resultado aleatorio.
-
 
 def generar_aleatorio_x_celdas(col, rango_min, rango_max, lista_archivo):
     # Los rangos inician en 1. Cada uno representa la cantidad que abarca cada
@@ -54,11 +130,11 @@ def generar_aleatorio_x_celdas(col, rango_min, rango_max, lista_archivo):
     except BaseException:
         return 'no encontrado'
 
+
 # Genera los datos de canton especifico en filas de csv.
 # Entradas: num de fila de inicio, num fila final, lista de filas del csv,
 # canton por buscar.
 # Salidas: fila de datos de canton, o 'no encontrado'.
-
 
 def encontrar_datos_canton(rango_min, rango_max, lista_archivo, canton):
     # En caso de no encontrar datos en el csv.
@@ -70,10 +146,10 @@ def encontrar_datos_canton(rango_min, rango_max, lista_archivo, canton):
     except BaseException:
         return 'no encontrado'
 
+
 # Genera los datos de junta especifica en filas de csv.
 # Entradas: lista de filas del csv, junta por buscar.
 # Salidas: fila de datos de junta, o 'no encontrado'.
-
 
 def encontrar_votos_junta(lista_archivo, junta):
     try:
@@ -84,10 +160,10 @@ def encontrar_votos_junta(lista_archivo, junta):
     except BaseException:
         return 'no encontrado'
 
+
 # Obtiene indices de provincias de lista de filas de csv.
 # Entradas: col por examinar, lista de filas del csv.
 # Salidas: diccionario de indices, o 'no encontrado'.
-
 
 def obtener_indices_juntas(col, lista_archivo):
     provincias = [
@@ -116,11 +192,11 @@ def obtener_indices_juntas(col, lista_archivo):
     except BaseException:
         return 'no encontrado'
 
+
 # Genera atributos aleatorios para cada muestra.
 # Entradas: junta aleatoria, lista de filas del csv de indicadores, lista de
 # filas del csv de votos.
 # Salidas: muestra creada.
-
 
 def generar_muestra_aux(aleatorio_juntas, n, data_indicadores, data_votos):
     edades = [
@@ -404,74 +480,3 @@ def generar_muestra_aux(aleatorio_juntas, n, data_indicadores, data_votos):
     voto = generar_aleatorio_x_celdas("n/a", 1, 16, datos_votos)
     nueva_muestra += [partidos[voto[0]]]
     return nueva_muestra
-
-# Genera muestras por provincia indicada.
-# Entradas: num de muestras, provincia a la que pertenecera la muestra.
-# Salidas: muestras creadas.
-
-
-def generar_muestra_provincia(n, nombre_provincia):
-    indice = 0
-    muestra = []
-    data_juntas = []
-    data_indicadores = []
-    data_votos = []
-    with open(Indicadores_x_Canton, 'r') as csv_indicadores, open(VotosxPartidoxJunta, 'r') as csv_votos, open(Juntas, 'r') as csv_juntas:
-        data_indicadores = list(csv.reader(csv_indicadores))
-        data_votos = list(csv.reader(csv_votos))
-        data_juntas = list(csv.reader(csv_juntas))
-    # Lee indices de provincias en csv
-    indices_provincias = obtener_indices_juntas(0, data_juntas)
-    if indices_provincias == 'no encontrado':
-        print('No se han obtenido los datos del CSV Juntas.')
-        return
-    # Valida parametros
-    if not isinstance(
-            n,
-            int) or nombre_provincia not in indices_provincias:
-        print(
-            'El valor ingresado para generar una muestra debe ser un entero.',
-            'La provincia indicada debe ingresarse en UPPERCASE, entre comillas y con los espacios apropiados. Ej: "SAN JOSE".')
-        return
-    # Genera junta dependiendo de su provincia
-    index_provincia = indices_provincias[nombre_provincia]
-    while indice < n:
-        aleatorio_juntas = generar_aleatorio_x_celdas(
-            6, index_provincia[0], index_provincia[1], data_juntas)
-        if aleatorio_juntas == 'no encontrado':
-            print('No se han encontrado los datos del CSV Juntas.')
-            return
-        muestra += [generar_muestra_aux(aleatorio_juntas,
-                                        n, data_indicadores, data_votos)]
-        indice += 1
-    return muestra
-
-# Genera muestras por pais.
-# Entradas: num de muestras.
-# Salidas: muestras creadas.
-
-
-def generar_muestra_pais(n):
-    muestra = []
-    indice = 0
-    data_indicadores = []
-    data_juntas = []
-    data_votos = []
-    if not isinstance(n, int):
-        print('El valor ingresado para generar una muestra debe ser un entero.')
-        return
-    with open(Indicadores_x_Canton, 'r') as csv_indicadores, open(Juntas, 'r') as csv_juntas, open(VotosxPartidoxJunta, 'r') as csv_votos:
-        data_indicadores = list(csv.reader(csv_indicadores))
-        data_juntas = list(csv.reader(csv_juntas))
-        data_votos = list(csv.reader(csv_votos))
-    while indice < n:
-        # Generar junta
-        aleatorio_juntas = generar_aleatorio_x_celdas(
-            6, 0, 6542, data_juntas)
-        if aleatorio_juntas == 'no encontrado':
-            print('No se han encontrado los datos del CSV Juntas.')
-            return
-        muestra += [generar_muestra_aux(aleatorio_juntas,
-                                        n, data_indicadores, data_votos)]
-        indice += 1
-    return muestra
