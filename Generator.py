@@ -2,9 +2,9 @@ import csv
 import random
 
 # Rutas de archivos csv por incluir
-Indicadores_x_Canton = './Documentos/Indicadores_x_Canton.csv'
-Juntas = './Documentos/Juntas.csv'
-VotosxPartidoxJunta = './Documentos/VotosxPartidoxJunta.csv'
+Indicadores_x_Canton = 'Indicadores_x_Canton.csv'
+Juntas = 'Juntas.csv'
+VotosxPartidoxJunta = 'VotosxPartidoxJunta.csv'
 semilla = 0
 
 
@@ -246,8 +246,8 @@ def generar_muestra_aux(aleatorio_juntas, n, data_indicadores, data_votos):
         'REPUBLICANO SOCIAL CRISTIANO',
         'RESTAURACION NACIONAL',
         'UNIDAD SOCIAL CRISTIANA',
-        'VOTOS NULOS',
-        'VOTOS BLANCOS']
+        'NULOS',
+        'BLANCOS']
     #Pone semilla en el random.
     if semilla == 0:
         random.seed()
