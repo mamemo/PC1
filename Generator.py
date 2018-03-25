@@ -42,7 +42,7 @@ def generar_muestra_pais(n):
             print('No se han encontrado los datos del CSV Juntas.')
             return
         muestra += [generar_muestra_aux(aleatorio_juntas,
-                                        n, data_indicadores, data_votos)]
+                                        data_indicadores, data_votos)]
         indice += 1
     return muestra
 
@@ -62,7 +62,7 @@ def generar_muestra_provincia(n, nombre_provincia):
         data_votos = list(csv.reader(csv_votos))
         data_juntas = list(csv.reader(csv_juntas))
     # Lee indices de provincias en csv
-    indices_provincias = obtener_indices_juntas(0, data_juntas)
+    indices_provincias = obtener_indices_provincias(0, data_juntas)
     if indices_provincias == 'no encontrado':
         print('No se han obtenido los datos del CSV Juntas.')
         return
@@ -83,7 +83,7 @@ def generar_muestra_provincia(n, nombre_provincia):
             print('No se han encontrado los datos del CSV Juntas.')
             return
         muestra += [generar_muestra_aux(aleatorio_juntas,
-                                        n, data_indicadores, data_votos)]
+                                        data_indicadores, data_votos)]
         indice += 1
     return muestra
 
@@ -165,7 +165,7 @@ def encontrar_votos_junta(lista_archivo, junta):
 # Entradas: col por examinar, lista de filas del csv.
 # Salidas: diccionario de indices, o 'no encontrado'.
 
-def obtener_indices_juntas(col, lista_archivo):
+def obtener_indices_provincias(col, lista_archivo):
     provincias = [
         'SAN JOSE',
         'ALAJUELA',
@@ -198,7 +198,7 @@ def obtener_indices_juntas(col, lista_archivo):
 # filas del csv de votos.
 # Salidas: muestra creada.
 
-def generar_muestra_aux(aleatorio_juntas, n, data_indicadores, data_votos):
+def generar_muestra_aux(aleatorio_juntas, data_indicadores, data_votos):
     edades = [
         '15 a 19',
         '20 a 24',
@@ -254,7 +254,7 @@ def generar_muestra_aux(aleatorio_juntas, n, data_indicadores, data_votos):
     else:
         random.seed(semilla)
     # Lee indices de provincias en csv
-    indices_provincias = obtener_indices_juntas(0, data_indicadores)
+    indices_provincias = obtener_indices_provincias(0, data_indicadores)
     if indices_provincias == 'no encontrado':
         print('No se han obtenido los datos del CSV Indicadores_x_Canton.')
         return
