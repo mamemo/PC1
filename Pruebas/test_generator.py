@@ -1,5 +1,6 @@
 from tec.ic.ia.pc1.g07 import generar_muestra_pais, generar_muestra_provincia, set_semilla
 
+#Para ejecutar estas pruebas, deben encontrarse los csv Juntas.csv, VotosxPartidoxJunta.csv, e Indicadores_x_Canton.csv en en mismo directorio.
 
 # Metodo que testea la funcion test_generar_muestra_pais.
 # Setea la semilla de RNG en 10 para obtener un resultado
