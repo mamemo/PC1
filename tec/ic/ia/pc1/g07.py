@@ -232,7 +232,7 @@ def generar_muestra_aux(aleatorio_juntas, data_indicadores, data_votos):
         'sector primario',
         'sector secundario',
         'sector terciario']
-    partidos = [
+    partidos1era = [
         'ACCESIBILIDAD SIN EXCLUSION',
         'ACCION CIUDADANA',
         'ALIANZA DEMOCRATA CRISTIANA',
@@ -246,6 +246,11 @@ def generar_muestra_aux(aleatorio_juntas, data_indicadores, data_votos):
         'REPUBLICANO SOCIAL CRISTIANO',
         'RESTAURACION NACIONAL',
         'UNIDAD SOCIAL CRISTIANA',
+        'NULOS',
+        'BLANCOS']
+    partidos2da = [
+        'ACCION CIUDADANA',
+        'RESTAURACION NACIONAL',
         'NULOS',
         'BLANCOS']
     #Pone semilla en el random.
@@ -469,14 +474,17 @@ def generar_muestra_aux(aleatorio_juntas, data_indicadores, data_votos):
         nueva_muestra += ['no agua']
     else:
         nueva_muestra += ['agua']
-    # Encuentra votos de junta
+    # Encuentra votos de junta 1ra y 2da  ronda
     junta = aleatorio_juntas[0][4]
     datos_votos = encontrar_votos_junta(data_votos, junta)
     if datos_votos == 'no encontrado':
         print('No se han encontrado los datos de la junta ',
               junta, 'en el CSV VotosxPartidoxJunta.')
         return
-    # Genera voto
+    # Genera voto 1era ronda
     voto = generar_aleatorio_x_celdas("n/a", 1, 16, datos_votos)
-    nueva_muestra += [partidos[voto[0]]]
+    nueva_muestra += [partidos1era[voto[0]]]
+    # Genera voto 2da ronda
+    voto = generar_aleatorio_x_celdas("n/a", 16, 20, datos_votos)
+    nueva_muestra += [partidos2da[voto[0]]]
     return nueva_muestra
