@@ -5,3 +5,4 @@
 5. # de junta
 6. electores
 7. votos recibidos
+8. votos recibidos - 2da ronda
