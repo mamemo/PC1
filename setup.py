@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 setup(name='tec.ic.ia.pc1.g07',
-      version='1.1.1',
+      version='1.2.0',
       py_modules=['tec.ic','tec.ic.ia','tec.ic.ia.pc1','tec.ic.ia.pc1.g07'],
       description='Generador de muestras basados en los resultados electorales presidenciales de la primera ronda en Costa Rica.',
       author='Trifuerza',

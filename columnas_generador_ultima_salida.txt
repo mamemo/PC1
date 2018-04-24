@@ -6,54 +6,55 @@
 4. Barrio	NO
 5. # de junta		NO
 6. Electores De Junta		NO
-7. Votos Recibido En Junta	SI
+7. Votos Recibidos En 1ra ronda	SI
+8. Votos Recibidos En 2da ronda	SI
 --A partir de aquí los datos son referentes al cantón o de la muestra generada --
-8. Población Total	SI
-9. Superficie		NO
-10. Densidad (personasXkm2) 	NO
-11. Porcentaje De Población Urbana 	SI
-12. Si la muestra pertenece a población urbana o no urbana	SI	
-13. Relación hombres-mujeres: Hombres por cada 100 mujeres	SI	
-14. Sexo (hombre/mujer)		SI
-15. Relación de Dependencia Demográfica.	NO
-16. Rango de Edad Según Su Sexo		SI
-17. Viviendas Individuales Ocupadas	SI
-18. Promedio De Ocupantes	SI
-19. Porcentaje de Viviendas en Buen Estado 	NO
-20. Si la muestra posee Vivienda en Buen Estado o Vivienda en Mal Estado	SI
-21. Porcentaje de de Viviendas Hacinadas 	NO
-22. Si la muestra posee Vivienda Hacinada o Vivienda No Hacinada	SI
-23. Nivel de Escolaridad	SI
-24. Porcentaje de Alfabetismo 	NO
-25. Porcentaje de Alfabetismo de Su Edad 	NO
-26. Si la muestra es Alfabeta/No Alfabeta (solo se considera la posibilidad de analfabetismo si no tiene escolaridad o tiene primaria incompleta)	SI
-27. Escolaridad Promedio 	NO
-28. Escolaridad Promedio de Su Edad  (se toman el rango de edad de 25 a 49 años como si iniciaran en 18 años, por falta de datos) 	SI
-29. Porcentaje de Asistencia a la Educación Regular 	SI
-30. Porcentaje de Asistencia a la Educación Regular de su edad (se toman el rango de edades 5 a 17 años como el rango 15 a 19 años, y el rango de edades 18 a 24 años como el rango 20 a 24 años, por falta de exactitud entre los datos)	NO
-31. Porcentaje de Personas Fuera de la Fuerza de Trabajo 	NO
-32. Porcentaje de Personas Dentro de la Fuerza de Trabajo (tasa neta de participación) 		NO		
-33. Porcentaje de Hombres Dentro de la Fuerza de Trabajo 	SI
-34. Porcentaje de Mujeres Dentro de la Fuerza de Trabajo 	SI
-35. Si la muestra se encuentra Dentro o Fuera de la Fuerza de Trabajo		SI
-36. Razón por la que se encuentra Fuera de la Fuerza (de ser el caso), o Sector en el que labora (si se encuentra Dentro de la Fuerza) SI
-37. Porcentaje de Población Ocupada No Asegurada	NO
-38. Porcentaje de Población Nacida en el Extranjero 	NO
-39. Si la muestra es nacido o no en el extranjero	SI
-40. Porcentaje de Población Con Discapacidad 	NO
-41. Si la muestra posee o no discapacidad	SI
-42. Porcentaje de Población No Asegurada 	SI
-43. Si la muestra está asegurada o no 		SI
-44. Forma de Aseguramiento (si no está asegurado el valor será n/a)	NO
-45. Porcentaje de Hogares con Jefatura Femenina 	SI
-46. Porcentaje de Hogares con Jefatura Compartida	SI 
-47. Tipo de jefatura en el hogar de la muestra		SI
-48. Si la muestra posee teléfono celular en hogar o no		SI
-49. Si la muestra posee teléfono residencial en hogar o no	SI
-50. Si la muestra posee computadora en hogar o no	SI
-51. Si la muestra posee internet en hogar o no		SI
-52. Si la muestra posee electricidad en hogar o no	SI
-53. Si la muestra posee servicio sanitario en hogar o no	SI
-54. Si la muestra posee agua en hogar o no	SI	
-55. Voto de la muestra 1era Ronda	SI
-56. Voto de la muestra 2da Ronda 	SI
+9. Población Total	SI
+10. Superficie		NO
+12. Densidad (personasXkm2) 	NO
+13. Porcentaje De Población Urbana 	SI
+14. Si la muestra pertenece a población urbana o no urbana	SI	
+15. Relación hombres-mujeres: Hombres por cada 100 mujeres	SI	
+16. Sexo (hombre/mujer)		SI
+17. Relación de Dependencia Demográfica.	NO
+18. Rango de Edad Según Su Sexo		SI
+18. Viviendas Individuales Ocupadas	SI
+19. Promedio De Ocupantes	SI
+20. Porcentaje de Viviendas en Buen Estado 	NO
+21. Si la muestra posee Vivienda en Buen Estado o Vivienda en Mal Estado	SI
+22. Porcentaje de de Viviendas Hacinadas 	NO
+23. Si la muestra posee Vivienda Hacinada o Vivienda No Hacinada	SI
+24. Nivel de Escolaridad	SI
+25. Porcentaje de Alfabetismo 	NO
+26. Porcentaje de Alfabetismo de Su Edad 	NO
+27. Si la muestra es Alfabeta/No Alfabeta (solo se considera la posibilidad de analfabetismo si no tiene escolaridad o tiene primaria incompleta)	SI
+28. Escolaridad Promedio 	NO
+29. Escolaridad Promedio de Su Edad  (se toman el rango de edad de 25 a 49 años como si iniciaran en 18 años, por falta de datos) 	SI
+30. Porcentaje de Asistencia a la Educación Regular 	SI
+31. Porcentaje de Asistencia a la Educación Regular de su edad (se toman el rango de edades 5 a 17 años como el rango 15 a 19 años, y el rango de edades 18 a 24 años como el rango 20 a 24 años, por falta de exactitud entre los datos)	NO
+32. Porcentaje de Personas Fuera de la Fuerza de Trabajo 	NO
+33. Porcentaje de Personas Dentro de la Fuerza de Trabajo (tasa neta de participación) 		NO		
+34. Porcentaje de Hombres Dentro de la Fuerza de Trabajo 	SI
+35. Porcentaje de Mujeres Dentro de la Fuerza de Trabajo 	SI
+36. Si la muestra se encuentra Dentro o Fuera de la Fuerza de Trabajo		SI
+37. Razón por la que se encuentra Fuera de la Fuerza (de ser el caso), o Sector en el que labora (si se encuentra Dentro de la Fuerza) SI
+38. Porcentaje de Población Ocupada No Asegurada	NO
+39. Porcentaje de Población Nacida en el Extranjero 	NO
+40. Si la muestra es nacido o no en el extranjero	SI
+41. Porcentaje de Población Con Discapacidad 	NO
+42. Si la muestra posee o no discapacidad	SI
+43. Porcentaje de Población No Asegurada 	SI
+44. Si la muestra está asegurada o no 		SI
+45. Forma de Aseguramiento (si no está asegurado el valor será n/a)	NO
+46. Porcentaje de Hogares con Jefatura Femenina 	SI
+47. Porcentaje de Hogares con Jefatura Compartida	SI 
+48. Tipo de jefatura en el hogar de la muestra		SI
+49. Si la muestra posee teléfono celular en hogar o no		SI
+50. Si la muestra posee teléfono residencial en hogar o no	SI
+51. Si la muestra posee computadora en hogar o no	SI
+52. Si la muestra posee internet en hogar o no		SI
+53. Si la muestra posee electricidad en hogar o no	SI
+54. Si la muestra posee servicio sanitario en hogar o no	SI
+55. Si la muestra posee agua en hogar o no	SI	
+56. Voto de la muestra 1era Ronda	SI
+57. Voto de la muestra 2da Ronda 	SI
